@@ -3,9 +3,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Button from "react-bootstrap/Button";
 
-const NavBarComponent = () => {
+const NavBarComponent = (props) => {
   return (
     <Navbar
       bg="dark"
@@ -43,7 +42,7 @@ const NavBarComponent = () => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <Button variant="outline-success">Cart</Button>
+        {props.children}
       </Container>
     </Navbar>
   );
