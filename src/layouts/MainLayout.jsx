@@ -14,6 +14,7 @@ const MainLayout = ({ children }) => {
       <ItemListContainer greeting="Item 1" />
       <ItemListContainer greeting="Item 2" />
       <ItemListContainer greeting="Item 3" />
+      <ItemListContainer greeting="Rene Irias" />
       {children}
     </div>
   );
