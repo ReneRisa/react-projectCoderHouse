@@ -6,7 +6,7 @@ import CartWidgetComponent from "../components/CartWidgetComponent/CartWidgetCom
 
 const MainLayout = ({ children }) => {
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
+    <div style={{ width: "80vw", height: "100vh" }}>
       <NavBarComponent>
         <CartWidgetComponent />
       </NavBarComponent>
