@@ -5,6 +5,22 @@ import ItemListContainer from "../components/ItemListContainer/ItemListContainer
 import CartWidgetComponent from "../components/CartWidgetComponent/CartWidgetComponent";
 
 const MainLayout = ({ children }) => {
+  const promesa = new Promise((resolve, reject) => {
+    const flag = false;
+    if (flag) {
+      resolve("Promesa resuelta correctamente");
+    } else {
+      reject("Promesa no resuelta correctamente");
+    }
+  });
+  promesa
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
   return (
     <div style={{ width: "80vw", height: "100vh" }}>
       <NavBarComponent>
