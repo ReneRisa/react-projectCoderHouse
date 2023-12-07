@@ -7,12 +7,19 @@ import CartWidgetComponent from "../components/CartWidgetComponent/CartWidgetCom
 // import axios to make HTTP requests(se usa en lugar de fetch)
 import axios from "axios";
 
+import { getProducts } from "../services";
+
 const MainLayout = ({ children }) => {
   const [productos, setProductos] = useState([]);
-  //llamada a API asyncrona
-  //forma mas comun
   useEffect(() => {
-    async function fetchData() {
+    getProducts()
+      .then((response) => {
+        setProductos(response.products);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    /* async function fetchData() {
       try {
         const res = await axios.get("https://dummyjson.com/products");
         setProductos([...res.data.products]);
@@ -22,7 +29,7 @@ const MainLayout = ({ children }) => {
         throw error;
       }
     }
-    fetchData();
+    fetchData(); */
   }, []);
 
   console.log(productos);
