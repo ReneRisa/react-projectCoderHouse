@@ -33,7 +33,6 @@ const CountComponent = () => {
       <button onClick={decrementCount}>Decrement</button>
     </div>
   );
-  return <div></div>;
 };
 
 export default CountComponent;
