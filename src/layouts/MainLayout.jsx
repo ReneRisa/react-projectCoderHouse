@@ -3,8 +3,9 @@ import NavBarComponent from "../components/NavBarComponent/NavBarComponent";
 import CountComponent from "../components/CountComponent/CountComponent";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
 import CartWidgetComponent from "../components/CartWidgetComponent/CartWidgetComponent";
-import { useGetProducts } from "../hooks/useProducts";
 import UserData from "../components/UserData/UserData";
+
+import { useGetProducts } from "../hooks/useProducts";
 
 const MainLayout = ({ children }) => {
   const { productos } = useGetProducts(4);
@@ -13,10 +14,17 @@ const MainLayout = ({ children }) => {
       <NavBarComponent>
         <CartWidgetComponent />
       </NavBarComponent>
-      <UserData firstName="Rene" lastName="Irias" age={20} />
+      <UserData
+        firstName="Rene"
+        lastName="Irias"
+        age={31}
+        myObject={{
+          product: "nuevo producto",
+          price: 100,
+        }}
+      />
       <CountComponent />
       <ItemListContainer productos={productos} />
-      {children}
     </div>
   );
 };
