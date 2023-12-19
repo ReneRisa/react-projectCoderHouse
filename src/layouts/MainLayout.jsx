@@ -5,16 +5,13 @@ import ItemListContainer from "../components/ItemListContainer/ItemListContainer
 import CartWidgetComponent from "../components/CartWidgetComponent/CartWidgetComponent";
 import UserData from "../components/UserData/UserData";
 
-import { useGetProducts } from "../hooks/useProducts";
-
 const MainLayout = ({ children }) => {
-  const { productos } = useGetProducts(4);
   return (
-    <div style={{ width: "80vw", height: "100vh" }}>
+    <div>
       <NavBarComponent>
         <CartWidgetComponent />
       </NavBarComponent>
-      <UserData
+      {/* <UserData
         firstName="Rene"
         lastName="Irias"
         age={31}
@@ -22,9 +19,8 @@ const MainLayout = ({ children }) => {
           product: "nuevo producto",
           price: 100,
         }}
-      />
-      <CountComponent />
-      <ItemListContainer productos={productos} />
+      /> */}
+      {/* <CountComponent /> */}
     </div>
   );
 };
