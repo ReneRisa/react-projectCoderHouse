@@ -1,14 +1,24 @@
 import { useState } from "react";
 
 //Components
-import NavBarComponent from "./components/NavBarComponent/NavBarComponent";
-import MainLayout from "./layouts/MainLayout";
+import MainRouter from "./router/MainRouter";
+
+import { useEffect } from "react";
 //Styles
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  return <MainLayout></MainLayout>;
+  //to change the title of the page(tab in the browser)
+  useEffect(() => {
+    document.title = "CMR Cleaning Services";
+  });
+
+  return (
+    <div style={{ width: "80vw", height: "100vh" }}>
+      <MainRouter />
+    </div>
+  );
 }
 
 export default App;
