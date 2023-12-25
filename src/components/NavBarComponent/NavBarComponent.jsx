@@ -5,9 +5,11 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import { useGetCategories } from "../../hooks/useCategory";
+import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
 
-const NavBarComponent = (props) => {
+const NavBarComponent = () => {
   const { categories } = useGetCategories();
+
   return (
     <Navbar
       bg="dark"
@@ -53,7 +55,7 @@ const NavBarComponent = (props) => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        {props.children}
+        <CartWidgetComponent />
       </Container>
     </Navbar>
   );
