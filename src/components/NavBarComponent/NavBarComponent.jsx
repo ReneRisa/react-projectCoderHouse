@@ -18,11 +18,15 @@ const NavBarComponent = () => {
       className="bg-body-tertiary"
     >
       <Container>
-        <Navbar.Brand href="/">CMR Cleaning Services</Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/">CMR Cleaning Services</Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            {/* <Nav.Link>
+              <Link to="/">Home</Link>
+            </Nav.Link> */}
             <Nav.Link href="#About Us">About Us</Nav.Link>
             <NavDropdown title="Services" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
