@@ -27,8 +27,10 @@ const NavBarComponent = () => {
             {/* <Nav.Link>
               <Link to="/">Home</Link>
             </Nav.Link> */}
-            <Nav.Link href="#About Us">About Us</Nav.Link>
-            <NavDropdown title="Services" id="basic-nav-dropdown">
+            <Nav.Link>
+              <Link to="/services">Services</Link>
+            </Nav.Link>
+            <NavDropdown title="Category Services" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
                 Home Cleaning
               </NavDropdown.Item>
