@@ -3,6 +3,8 @@ import Home from "../pages/Home";
 import NavBarComponent from "../components/NavBarComponent/NavBarComponent";
 import ItemDetailContainer from "../pages/ItemDetailContainer";
 import Category from "../pages/Category";
+import Services from "../pages/Services";
+import ServiceDetailContainer from "../pages/ServiceDetailContainer";
 
 NavBarComponent;
 const MainRouter = () => {
@@ -13,6 +15,8 @@ const MainRouter = () => {
         <Route path="/" element={<Home />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/category/:name" element={<Category />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/service/:id" element={<ServiceDetailContainer />} />
       </Routes>
     </BrowserRouter>
   );
