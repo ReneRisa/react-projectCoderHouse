@@ -1,0 +1,18 @@
+.cartWidgetContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.cartWidgetContainer:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+.cartWidgetContainerBackground {
+  background-color: aqua;
+}
+
+.cartWidgetContainerBackground2 {
+  background-color: bisque;
+}

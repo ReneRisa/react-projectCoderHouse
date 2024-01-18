@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import CountComponent from "../CountComponent/CountComponent";
+import LoadingComponent from "../LoadingComponent/LoadingComponent";
 
 /*  const promesa = new Promise((resolve, reject) => {
     const flag = false;
@@ -49,23 +50,29 @@ const ItemListContainer = (props) => {
   return (
     <Container fluid>
       <Row className="justify-content-center">
-        {props.productos.map((producto) => (
-          //<Col key={producto.id} s={8} md={6} lg={4} xl={4}>
-          <Card style={{ width: "18rem", margin: "5px" }} key={producto.id}>
-            <Link to={`/item/${producto.id}`}>
-              <Card.Img variant="top" src={producto.thumbnail} />
-            </Link>
-            <Card.Body>
-              <Card.Title>{producto.title}</Card.Title>
-              <Card.Text>{producto.description}</Card.Text>
-              <Card.Text>${producto.price}</Card.Text>
-              <Button variant="primary" onClick={handleClick}>
-                BUY
-              </Button>
-            </Card.Body>
-          </Card>
-          //</Col>
-        ))}
+        {/* Tecnica de renderizado para decirle que esta cargando los productos y
+        cuando se cargan que se muestren  */}
+        {props.productos.length === 0 ? (
+          <LoadingComponent />
+        ) : (
+          props.productos.map((producto) => (
+            //<Col key={producto.id} s={8} md={6} lg={4} xl={4}>
+            <Card style={{ width: "18rem", margin: "5px" }} key={producto.id}>
+              <Link to={`/item/${producto.id}`}>
+                <Card.Img variant="top" src={producto.thumbnail} />
+              </Link>
+              <Card.Body>
+                <Card.Title>{producto.title}</Card.Title>
+                <Card.Text>{producto.description}</Card.Text>
+                <Card.Text>${producto.price}</Card.Text>
+                <Button variant="primary" onClick={handleClick}>
+                  BUY
+                </Button>
+              </Card.Body>
+            </Card>
+            //</Col>
+          ))
+        )}
       </Row>
     </Container>
   );

@@ -14,14 +14,16 @@ import {
 export const useGetProducts = (limit = 10) => {
   const [productos, setProductos] = useState([]);
   useEffect(() => {
-    getProducts(limit)
-      .then((response) => {
-        console.log(response);
-        setProductos(response.products);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    setTimeout(() => {
+      getProducts(limit)
+        .then((response) => {
+          console.log(response);
+          setProductos(response.products);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, 3000);
   }, []);
   return { productos };
 };
