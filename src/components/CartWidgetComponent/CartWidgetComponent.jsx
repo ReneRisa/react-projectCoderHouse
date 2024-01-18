@@ -4,11 +4,19 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import "./CartWidget.css";
 
 const CartWidgetComponent = () => {
-  const { count } = useContext(CartContext);
+  const { count, setCount } = useContext(CartContext);
+  console.log(count);
   return (
-    <div>
+    <div
+    /* className={`cartWidgetContainer ${
+        count <= 0
+          ? "cartWidgetContainerBackground"
+          : "cartWidgetContainerBackground2"
+      }`} */
+    >
       <Button variant="light">
         🛒
         <Badge pill variant bg="primary">
