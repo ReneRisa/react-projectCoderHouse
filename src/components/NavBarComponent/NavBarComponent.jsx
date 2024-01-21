@@ -6,9 +6,11 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import { useGetCategories } from "../../hooks/useCategory";
 import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
+import { useGetCollectionDocuments } from "../../hooks/useCollection";
 
 const NavBarComponent = () => {
   const { categories } = useGetCategories();
+  const { datos } = useGetCollectionDocuments("categories");
 
   return (
     <Navbar
@@ -31,21 +33,15 @@ const NavBarComponent = () => {
               <Link to="/services">Services</Link>
             </Nav.Link>
             <NavDropdown title="Category Services" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
-                Home Cleaning
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Window Washing
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Move-in/ Move-out Cleaning
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">
-                Commercial Cleaning
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.5">
-                Carpet Cleaning
-              </NavDropdown.Item>
+              {datos.map((category) =>
+                category.categories.map((categories, index) => (
+                  <NavDropdown.Item key={index}>
+                    <Link to={`/category-service/${categories}`}>
+                      {categories}
+                    </Link>
+                  </NavDropdown.Item>
+                ))
+              )}
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.6">
                 Get a Quote
@@ -61,6 +57,9 @@ const NavBarComponent = () => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        <Nav.Link>
+          <Link to="/create-service">Create new service</Link>
+        </Nav.Link>
         <CartWidgetComponent />
       </Container>
     </Navbar>

@@ -5,6 +5,9 @@ import ItemDetailContainer from "../pages/ItemDetailContainer";
 import Category from "../pages/Category";
 import Services from "../pages/Services";
 import ServiceDetailContainer from "../pages/ServiceDetailContainer";
+import CreateService from "../pages/CreateService";
+import UpdateService from "../pages/UpdateService";
+import CategoryService from "../pages/CategoryService";
 
 NavBarComponent;
 const MainRouter = () => {
@@ -17,6 +20,9 @@ const MainRouter = () => {
         <Route path="/category/:name" element={<Category />} />
         <Route path="/services" element={<Services />} />
         <Route path="/service/:id" element={<ServiceDetailContainer />} />
+        <Route path="/create-service/" element={<CreateService />} />
+        <Route path="/update-service/:id" element={<UpdateService />} />
+        <Route path="/category-services/:name" element={<CategoryService />} />
       </Routes>
     </BrowserRouter>
   );
