@@ -5,10 +5,33 @@ import {
   doc,
   getDoc,
   getDocs,
+  query,
+  where,
 } from "firebase/firestore";
 
+export const useGetCollectionByCategory = (
+  collectionName = "services",
+  name
+) => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const db = getFirestore();
+    const collectionData = collection(db, collectionName);
+    const categoryQuery = query(collectionData, where("category", "==", name));
+    getDocs(categoryQuery)
+      .then((response) => {
+        console.log(response);
+        setData(response.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [name]);
+  return { data };
+};
+
 export const useGetDocumentById = (collectionName = "services", id) => {
-  const [datos, setDatos] = useState({});
+  const [data, setData] = useState({});
   useEffect(() => {
     const db = getFirestore();
     const collectionData = collection(db, collectionName);
@@ -16,13 +39,13 @@ export const useGetDocumentById = (collectionName = "services", id) => {
     getDoc(docData)
       .then((response) => {
         console.log(response);
-        setDatos({ ...response.data(), id: response.id });
+        setData({ ...response.data(), id: response.id });
       })
       .catch((error) => {
         console.log(error);
       });
   }, [id]);
-  return { datos };
+  return { data };
 };
 
 export const useGetCollectionDocuments = (collectionName = "services") => {
