@@ -25,7 +25,35 @@ const Home = () => {
   }); */
   return (
     <div>
-      <ItemListContainer productos={productos} />
+      {/* <ItemListContainer productos={productos} /> */}
+      <div>
+        <h1>CMR Cleaning Services</h1>
+        <p>
+          Reliable house cleaning professionals serving the greater Reno area.
+          We provide one of the best cleaning services for home, office,
+          construction sites, and more! We can take on any job at any time. All
+          equipment is included at no extra charge. Please call us today for a
+          FREE ESTIMATE. Se Habla Español
+        </p>
+        <p>Call Now (775)-507-8158</p>
+      </div>
+      <div>
+        <h2>WHY CHOOSE US</h2>
+        <div>
+          <div>
+            <h4>Certified Profesional Cleaners</h4>
+          </div>
+          <div>
+            <h4>100% Satisfaction Guaranteed</h4>
+          </div>
+          <div>
+            <h4>Environmentally Friendly Cleaning</h4>
+          </div>
+          <div>
+            <h4>Available Evenings & Weekends </h4>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

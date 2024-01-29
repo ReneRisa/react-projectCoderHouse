@@ -22,7 +22,7 @@ const MainRouter = () => {
         <Route path="/service/:id" element={<ServiceDetailContainer />} />
         <Route path="/create-service/" element={<CreateService />} />
         <Route path="/update-service/:id" element={<UpdateService />} />
-        <Route path="/category-services/:name" element={<CategoryService />} />
+        <Route path="/categoryServices/:name" element={<CategoryService />} />
       </Routes>
     </BrowserRouter>
   );

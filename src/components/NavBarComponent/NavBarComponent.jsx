@@ -39,7 +39,7 @@ const NavBarComponent = () => {
                     console.log(categories),
                     (
                       <NavDropdown.Item key={index}>
-                        <Link to={`/category-service/${categories}`}>
+                        <Link to={`/categoryServices/${categories}`}>
                           {categories}
                         </Link>
                       </NavDropdown.Item>
@@ -53,13 +53,13 @@ const NavBarComponent = () => {
               </NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="Categories" id="basic-nav-dropdown">
+            {/* <NavDropdown title="Categories" id="basic-nav-dropdown">
               {categories.map((category, index) => (
                 <NavDropdown.Item key={index}>
                   <Link to={`/category/${category}`}>{category}</Link>
                 </NavDropdown.Item>
               ))}
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
         <Nav.Link>
