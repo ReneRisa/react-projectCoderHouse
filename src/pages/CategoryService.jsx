@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 
 const CategoryService = () => {
   const { name } = useParams();
+  console.log(name);
   const { data } = useGetCollectionByCategory("services", name);
   console.log(data);
   return <div>{<ServiceListContainer services={data} />}</div>;

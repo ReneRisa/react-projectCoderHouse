@@ -34,13 +34,18 @@ const NavBarComponent = () => {
             </Nav.Link>
             <NavDropdown title="Category Services" id="basic-nav-dropdown">
               {datos.map((category) =>
-                category.categories.map((categories, index) => (
-                  <NavDropdown.Item key={index}>
-                    <Link to={`/category-service/${categories}`}>
-                      {categories}
-                    </Link>
-                  </NavDropdown.Item>
-                ))
+                category.categories.map(
+                  (categories, index) => (
+                    console.log(categories),
+                    (
+                      <NavDropdown.Item key={index}>
+                        <Link to={`/category-service/${categories}`}>
+                          {categories}
+                        </Link>
+                      </NavDropdown.Item>
+                    )
+                  )
+                )
               )}
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.6">

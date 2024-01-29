@@ -23,7 +23,7 @@ export const useGetProducts = (limit = 10) => {
         .catch((error) => {
           console.log(error);
         });
-    }, 3000);
+    }, 400);
   }, []);
   return { productos };
 };

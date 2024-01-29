@@ -8,6 +8,7 @@ import CountComponent from "../components/CountComponent/CountComponent";
 
 const ServiceDetailContainer = () => {
   const { id } = useParams(); //useParams es un hook que nos permite obtener los parametros de la url y asi obtener el id
+  console.log(id);
   const { data } = useGetDocumentById("services", id);
 
   return (
